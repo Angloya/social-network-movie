@@ -15,12 +15,12 @@ export default new Router({
     {
       path: '/profile',
       name: 'profile',
-      component: () => import(/* webpackChunkName: "about" */ './views/Profile.vue')
+      component: () => import(/* webpackChunkName: "about" */ './views/profile.vue')
     },
     {
       path: '/auth',
       name: 'auth',
-      component: () => import(/* webpackChunkName: "about" */ './views/AuthUser.vue')
+      component: () => import(/* webpackChunkName: "about" */ './views/authUser.vue')
     },
     {
       path: '/about',
@@ -34,6 +34,11 @@ export default new Router({
       path: '/movie/:id',
       name: 'movie',
       component: movie
+    },
+    {
+      path: '/search',
+      name: 'search',
+      component: () => import(/* webpackChunkName: "about" */ './views/Search.vue')
     }
   ]
 })

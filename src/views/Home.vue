@@ -1,5 +1,7 @@
 <template>
-  <b-container>
+<b-container class="text-center">
+   <img class="mt-6" v-if="loading" src="../assets/loading.gif" alt="loading..."/>
+  <b-container v-if="!loading" v-cloak>
     <b-row>
       <b-col>
           <b-pagination
@@ -20,11 +22,12 @@
           img-top
           tag="article"
           style="max-width: 20rem;"
-          class="mb-2"
+          class="mb-2 pointer"
           @click="movieRouter(movie.id)">
         </b-card>
       </b-col>
     </b-row>
+  </b-container>
   </b-container>
 </template>
 
@@ -48,6 +51,9 @@ export default {
   computed: {
     movies () {
       return this.$store.getters.movies
+    },
+    loading () {
+      return this.$store.state.loading
     }
   },
   methods: {
